@@ -1,15 +1,18 @@
-import ProjectCard from "./ProjectCard";
-import "./index.css"
+import ProjectCard from './ProjectCard'
 
-export default function ProjectList({projects}){
-    return(
-        <div className="projectList">
-            {projects.map((project) =>
-            (<ProjectCard key = {project.id} project = {project}/>)
-             )}
-
-
-            
-        </div>
-    )
+function ProjectList({ projects }) {
+  return (
+    <div className="projects-wrapper">
+      <div className="projects-container">
+        {projects.map(project => (
+          <ProjectCard
+            key={project.id}
+            project={project}
+          />
+        ))}
+      </div>
+    </div>
+  )
 }
+
+export default ProjectList
